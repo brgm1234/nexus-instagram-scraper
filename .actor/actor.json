@@ -1,0 +1,43 @@
+{
+  "actorSpecification": 1,
+  "name": "nexus-instagram-scraper",
+  "title": "Nexus Instagram Scraper",
+  "description": "Scrapes Instagram profiles, posts, reels, and hashtags using Playwright + Crawlee with Apify proxy.",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Nexus Instagram Scraper Results",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "url",
+              "title",
+              "data"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "url": {
+                "label": "URL",
+                "format": "link"
+              },
+              "title": {
+                "label": "Title"
+              },
+              "data": {
+                "label": "Data"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
